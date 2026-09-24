@@ -1,0 +1,392 @@
+/* =========================================================
+   Ravaro Equine Veterinary Services – stylesheet
+   ========================================================= */
+
+:root {
+  --purple: #6c6db3;       /* brand purple from the Canva site */
+  --purple-dark: #5a5ba0;
+  --dark: #0e0b08;         /* homeclass / services background */
+  --text: #1c1c1c;
+  --white: #ffffff;
+  --gold: #D5B56E;
+  --max-width: 1200px;
+  --font: "Jost", "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--white);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+h2, h3, h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1{
+  border-style: solid;
+  border-bottom-color: var(--gold);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+p { margin: 0 0 1.25em; }
+p:last-child { margin-bottom: 0; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.narrow { max-width: 820px; }
+.text-center { text-align: center; }
+
+.band-purple {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  padding: 3.5rem 1.5rem 1.5rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--purple);
+  color: var(--white);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.logo-line2 { padding-left: 1.2em; }
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
+}
+.main-nav a:hover,
+.main-nav a:focus-visible { border-bottom-color: var(--gold); }
+
+a:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* Mobile menu toggle (CSS-only) */
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.nav-toggle-label { display: none; }
+
+/* ---------- Homeclass ---------- */
+.homeclass {
+  position: relative;
+  background: var(--dark);
+  color: var(--white);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 55%;
+  background: url("images/hero-horse.jpg") center left / cover no-repeat;
+}
+/* soft fade from the dark background into the photo */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--dark) 0%, rgba(14, 11, 8, 0) 35%);
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+.hero-content > * { max-width: 560px; }
+.hero-content > h1 { max-width: 720px; }
+
+.homeclass h1 {
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  
+}
+
+/* ---------- About ---------- */
+.about {
+  margin-top: 6rem;
+  padding: 5rem 0;
+}
+
+.about h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  border-style: solid;
+  border-bottom-color: var(--gold);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+ 
+}
+
+/* ---------- Services ---------- */
+.services-band { padding: 4.5rem 0; }
+
+.services-dark {
+  color: var(--white);
+  background-image: url(images/amymars-horses-7699027.jpg);
+  background-position: 35% 40%;
+ 
+}
+
+.services-dark + .band-purple { margin-top: 4rem; }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.service {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.service h3 {
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  border-style: solid;
+  border-bottom-color: var(--gold);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* ---------- Team ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+}
+
+.team-text h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Emergency ---------- */
+.emergency-band { 
+  padding: 2.5rem 0; 
+}
+
+.emergency-band h3 {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  border-style: solid;
+  border-bottom-color: var(--gold);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 50%;
+  margin-left: 25%;
+
+}
+
+/* ---------- Contact ---------- */
+.contact { padding-bottom: 5rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  
+}
+
+.contact-block h3 {
+  text-transform: none;
+  font-size: 1.05rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+  border-style: solid;
+  border-bottom-color: var(--gold);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 40%;
+  margin-left: 30%;
+  
+  
+  
+}
+
+.contact-block h3:not(:first-child) { margin-top: 1.5rem; }
+.contact-block p + p { margin-top: 1.5rem; }
+
+.contact-block address { font-style: normal; }
+
+.contact-block a { text-decoration: none; }
+.contact-block a:hover { text-decoration: underline; }
+.contact-block a:focus-visible { outline-color: var(--purple); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #000;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.footer-inner {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.copyright { margin-left: auto; opacity: 0.7; }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .main-nav ul { gap: 1.25rem; }
+  .main-nav a { font-size: 0.85rem; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem 2.5rem; }
+}
+
+@media (max-width: 860px) {
+  /* hamburger menu */
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--white);
+    position: relative;
+  }
+  .nav-toggle-label span::before { position: absolute; top: -8px; }
+  .nav-toggle-label span::after  { position: absolute; top: 8px; }
+
+  .nav-toggle:focus-visible + .nav-toggle-label { outline: 2px solid var(--white); outline-offset: 4px; }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--purple-dark);
+    display: none;
+  }
+  .nav-toggle:checked ~ .main-nav { display: block; }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1rem;
+  }
+  .main-nav a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+
+  /* hero: photo on top, text below */
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background-position: center 30%;
+  }
+  .hero-image::before {
+    background: linear-gradient(to top, var(--dark) 0%, rgba(14, 11, 8, 0) 40%);
+  }
+
+  .about { margin-top: 3rem; padding: 3.5rem 0; }
+
+  .team-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 560px) {
+  .service-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-wrap: wrap; }
+  .copyright { margin-left: 0; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

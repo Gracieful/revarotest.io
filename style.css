@@ -59,7 +59,7 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; 
 }
 
 .narrow { max-width: 820px; }
@@ -101,6 +101,8 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.02em;
+  max-height: 100px;
+  
 }
 .logo-line2 { padding-left: 1.2em; }
 
@@ -138,7 +140,7 @@ a:focus-visible {
   position: relative;
   background: var(--dark);
   color: var(--white);
-  margin-top: 2.5rem;
+/* margin-top: 2.5rem; */
   overflow: hidden;
 }
 
@@ -173,12 +175,13 @@ a:focus-visible {
 
 /* ---------- About ---------- */
 .about {
-  margin-top: 6rem;
-  padding: 5rem 0;
+/*  margin-top: 6rem;*/
+  padding: 3rem 0;
 }
 
 .about h4 {
   font-size: 1.1rem;
+  margin-top: -1rem;
   margin-bottom: 1.25rem;
   border-style: solid;
   border-bottom-color: var(--gold);
@@ -189,6 +192,11 @@ a:focus-visible {
 }
 
 /* ---------- Services ---------- */
+.services h2 
+{
+  margin-top: -1.25rem;
+}
+
 .services-band { padding: 4.5rem 0; }
 
 .services-dark {
@@ -198,7 +206,7 @@ a:focus-visible {
  
 }
 
-.services-dark + .band-purple { margin-top: 4rem; }
+/*.services-dark + .band-purple { margin-top: 4rem; }*/
 
 .service-grid {
   display: grid;
@@ -208,7 +216,7 @@ a:focus-visible {
 
 .service {
   font-size: 1rem;
-  line-height: 1.45;
+/*  line-height: 1.45; */
 }
 
 .service h3 {
@@ -233,6 +241,11 @@ a:focus-visible {
 .team-text h3 {
   font-size: 1.1rem;
   margin-bottom: 1.25rem;
+}
+
+.team h2
+{
+   margin-top: -1.25rem;
 }
 
 /* ---------- Emergency ---------- */
